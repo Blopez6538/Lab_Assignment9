@@ -8,14 +8,14 @@ struct RecordType
     char name;
     int order;
     // create a next pointer (for linkedlist structure)
-	struct RecordType *next; //Done?
+	struct RecordType *next; 
 };
 
 // Fill out this structure
 struct HashType
 {
     // create a pointer to a RecordType
-	struct RecordType *record; //DONE?
+	struct RecordType *record;
 };
 
 // Compute the hash function
@@ -23,7 +23,7 @@ int hash(int x, int tableSize)
 {
     // hash function is x % tableSize
 	int key = x % tableSize;
-	return key; //returns the key after computing for its mod. DONE?
+	return key; //returns the key after computing for its mod.
 
 }
 
@@ -82,13 +82,13 @@ void insertRecord(struct HashType *hashTable, struct RecordType *record, int tab
 {
 	int index;
     // call the hash function to get the index
-	index = hash(record->id,tableSize);//WTF
+	index = hash(record->id,tableSize);
     // if the RecordType at that index is NULL
-	if(hashTable[index].record == NULL)//WTF
+	if(hashTable[index].record == NULL)
 	{
-		hashTable[index].record = record;//WTF // set 'record' equal to the HashType pointer in the table at index
+		hashTable[index].record = record; // set 'record' equal to the HashType pointer in the table at index
 	}
-    // else, calloc
+    // else
 	else
 	{
 		struct RecordType *tmp = hashTable[index].record;
